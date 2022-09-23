@@ -19,6 +19,17 @@ function Home() {
             console.log(err)
         })
     })
+
+    function taskDelete(id){
+        let data = [...todo]
+        let filteredData = data.filter(todo => todo.id !== id)
+
+        axios.delete(`https://632b01531090510116ce5636.mockapi.io/todos/${id}`)
+        .then(res =>{
+            alert('Berhasil hapus task')
+        })
+        setTodo(filteredData)
+    }
    
   return (
     <div>
@@ -41,7 +52,7 @@ function Home() {
                 </div>
 
                 <div className='my-4 d-flex justify-content-center'>
-                    <List data={todo}/>
+                    <List taskDelete={taskDelete} data={todo}/>
                 </div>
             </div>
         </div>

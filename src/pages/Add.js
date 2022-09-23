@@ -37,6 +37,7 @@ function Add() {
         }
 
         setTodo(data)
+        setFormTask({task:''})
         //Add Task
         // let data = [...todo]
         // data.push({id: uid(), task: formTask.task})

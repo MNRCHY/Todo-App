@@ -4,7 +4,7 @@ import React from 'react'
 import { ListGroup, Button, } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-function List({data, editTask, deleteTask}) {
+function List({data, editTask, taskDelete}) {
     const navigate = useNavigate()
 
   return (
@@ -17,7 +17,7 @@ function List({data, editTask, deleteTask}) {
                         <div>
                             <Button className='CheckTaskButt' variant='secondary' size='sm'></Button>
                             <Button className='CommandButton mx-2' variant='warning' size='sm' onClick={() => {navigate ('/edit'); editTask (todo.id)}}>Edit</Button>
-                            <Button className='CommandButton' variant='danger' size='sm' onClick ={() => deleteTask (todo.id)}>Delete</Button>
+                            <Button className='CommandButton' variant='danger' size='sm' onClick ={() => taskDelete (todo.id)}>Delete</Button>
                         </div>
                     </ListGroup.Item>
                 )
